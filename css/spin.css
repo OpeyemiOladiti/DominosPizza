@@ -1,3 +1,22 @@
+.body1 {
+  background-image: url('../assets/Pizza3.svg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust as needed */
+    background-position: left top, right bottom;
+    background-attachment: fixed;
+}
+
+.body1::after {
+  content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (last value) for transparency */
+    z-index: -1;
+}
+
 .spinContainer {
     display: flex;
     flex-direction: column;
@@ -30,12 +49,23 @@ text-align: center;
 
 }
 button {
+  display: flex;
+  text-align: center;
 padding: 20px ;
 gap: 15px;
 border-radius: 8px ;
 border: none;
 background-color: #D01632;
 color: #fff;
+}
+
+span {
+font-family: Arial;
+font-size: 16px;
+font-weight: 700;
+line-height: 18.4px;
+text-align: center;
+
 }
 
 .frameContainer {
