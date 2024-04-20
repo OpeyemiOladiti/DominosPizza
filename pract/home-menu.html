@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home-menu.css">
+</head>
+<body class="">
+    
+    <div class="container">
+        <header>
+        <nav class="nav">
+            <h1><img src="image/Domino's Pizza - png 0.svg"/></h1>
+            <ul>
+                <div class="narv">
+                    <li><a href="#"><img src="image/Vector (8).svg"/>Stores</a></li>
+                </div>
+
+                <div class="narv">
+                    <li><a href="#"><img src="image/Vector (8).svg"/>Address</a></li>
+                </div>
+
+                <div class="narv"> 
+                    <li><a href="#"><img src="image/mdi_shopping-outline.svg"/>Saved</a></li>
+                </div>
+
+                <div class="narv">
+                    <li><a href="#"><img src="image/Vector (10).svg"/>History</a></li>
+                </div>
+                <div class="narv">
+                    <li><a href="#"><img src="image/Vector (11).svg"/>Support</a></li>
+                </div>
+
+                <div class="narv">
+                    <li><a href="#"><img src="image/mdi_information-outline (1).svg"/>About</a></li>
+                    </div>
+                <br><br><br><br>
+                <div class="narv">
+                    <li><a href="#"><img src="image/Vector (7).svg"/>Login</a></li></div>
+            </ul>
+        </nav>
+        
+        <div class="content">
+        <div class="upper">
+            <div class="grou">
+            <img src="image/Vector (2).svg"  class="menu-toggle" onclick="toggleMenu()"></div>
+            <div class="tra-cart">
+            <a href="#"><div class="title">Track Order</div></a>
+            <div class="icon-cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                </svg>
+                <span>0</span>
+            </div>
+            </div>
+        </header>
+
+    <section class="hot-deals">
+        <h2>Deals</h2>
+        <div class="slideshow-container">
+          <div class="slide fade">
+            <img src="image/Frame 879.svg" alt="Deal 1">
+          </div>
+          <div class="slide fade">
+            <img src="image/Free Delivery.svg" alt="Deal 2">
+          </div>
+        </div>
+      </section>
+    
+    <br><br>
+    <h1>Categories</h1>
+    <div class="categories">
+        <div>
+            <a href="#"><img src="image/🦆 icon _pizza slice of pizza_.svg" class="img1"/>
+            <h3>Pizza</h3></a>
+        </div>
+        <div>
+            <a href="#"><img src="image/🦆 emoji _poultry leg_.svg" class="img2"/>
+            <h3>Chicken</h3></a>
+        </div>
+        <div>
+            <a href="#"><img src="image/🦆 emoji _soft ice cream_.svg" class="img3"/>
+            <h3>Dessert</h3></a>
+        </div>
+        <div>
+            <a href="#"><img src="image/🦆 icon _french fries_.svg" class="img4"/>
+            <h3>Extras</h3></a>
+        </div>
+        <div>
+            <a href="#"><img src="image/🦆 icon _soft drinks cola coke_.svg" class="img5"/>
+            <h3>Drinks</h3></a>
+        </div>
+    </div>
+    <div>
+        <br> <br>
+        <div class="pizza">
+        <h1>Pizza</h1>
+        <a href="#"><h6 class="see">See all</h6></a>
+    </div>
+
+        <div class="listProduct">
+
+        </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <div class="subtotalContainer" style="background-color: red;">
+                <div class="subtotalTitle">Subtotal</div>
+                <div class="subtotalPrice">0.00</div>
+            </div>
+            <div class="totalItems">Total Items: <span class="itemCount">0</span></div>
+            <div class="cartContent"></div>
+        </div>
+        <div class="btn">
+            <button class="close" style="background-color: rgb(219, 188, 214)";>CLOSE</button>
+            <a href="/DominosPizza/Domino-Pizza/index.html"><button class="checkOut">Check Out</button></a>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <script src="home-menu.js"></script>
+    <script>
+        function toggleMenu() {
+            var container = document.querySelector('.container');
+            container.classList.toggle('active');
+}
+
+    </script>
+</body>
+</html>

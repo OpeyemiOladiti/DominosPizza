@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name":" Southern Style BBQ..",
+        "price": 8000,
+        "image": "image/Rectangle 1460 (1).svg"
+    },
+    {
+        "id": 2,
+        "name":" Plain Veggies Pizza",
+        "price": 8000,
+        "image": "image/Rectangle 1460 (1).svg"
+    },
+    {
+        "id": 3,
+        "name":" Chicken & Veggies",
+        "price": 2500,
+        "image": "image/Rectangle 1460.svg"
+    },
+    {
+        "id": 4,
+        "name":" Chicken  & 3 Sauce...",
+        "price": 3000,
+        "image": "image/Rectangle 1460 (2).svg"
+    },
+    {
+        "id": 5,
+        "name":" Chocolate Cake",
+        "price": 1200,
+        "image": "image/Rectangle 1460 (3).svg"
+    },
+    {
+        "id": 6,
+        "name":" Oreo & Chocolate S...",
+        "price": 2800,
+        "image": "image/Rectangle 1460 (4).svg"
+    }
+
+]
