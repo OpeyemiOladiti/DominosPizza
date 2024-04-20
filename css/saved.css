@@ -1,9 +1,13 @@
+body {
+    background-color:#F8F8F8;
+}
 .savedItemContainer {
     margin: 0px auto;
     width: 343px;
     height: 278px;
     top: 68px;
     left: 25px;
+
 }
 
 .savedpic {
@@ -13,13 +17,11 @@
 
 .savedd {
     background-color: #fff;
-    width: 148px;
-    height: 132px;
     gap: 0px;
-    border-radius: 4px 0px 0px 0px;
+    border-radius: 4px;
     opacity: 0px;
     margin: 5px;
-    border: 1px solid black;
+    padding: 5px;
 }
 
 .savedHeading {
