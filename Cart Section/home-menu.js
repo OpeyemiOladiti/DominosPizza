@@ -58,6 +58,25 @@ closeCart.addEventListener('click', () => {
             addToCart(id_product);
         }
     })
+
+    const updateSubtotal = () => {
+        const subtotalElement = document.querySelector('.subtotal');
+        const subtotal = calculateSubtotal();
+        sessionStorage.setItem('subtotal', subtotalAmount);
+        subtotalElement.textContent = `N${subtotal.toFixed(2)}`;
+    };
+    
+    
+    // Function to calculate the subtotal
+    const calculateSubtotal = () => {
+        let subtotal = 0;
+        cart.forEach(item => {
+            const product = products.find(product => product.id === item.product_id);
+            subtotal += product.price * item.quantity;
+        });
+        return subtotal.toFixed(2);
+    };
+
 const addToCart = (product_id) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
     if(cart.length <= 0){
@@ -75,7 +94,10 @@ const addToCart = (product_id) => {
     }
     addCartToHTML();
     addCartToMemory();
-}
+
+    updateSubtotal();
+};
+
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -83,9 +105,9 @@ const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
     let totalPrice = 0;
-    if(cart.length > 0){
+    if (cart.length > 0) {
         cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
+            totalQuantity += item.quantity;
             let newItem = document.createElement('div');
             newItem.classList.add('item');
             newItem.dataset.id = item.product_id;
@@ -95,12 +117,14 @@ const addCartToHTML = () => {
             listCartHTML.appendChild(newItem);
             let subtotal = info.price * item.quantity; // Calculate subtotal
             totalPrice += subtotal;
+
+            // Display the item in the cart
             newItem.innerHTML = `
-            <div class="image">
+                <div class="image">
                     <img src="${info.image}">
                 </div>
                 <div class="name">
-                ${info.name}
+                    ${info.name}
                 </div>
                 <div class="totalPrice">N${info.price * item.quantity}</div>
                 <div class="quantity">
@@ -109,15 +133,22 @@ const addCartToHTML = () => {
                     <span class="plus">></span>
                 </div>
                 <div class="subtotal">N${subtotal.toFixed(2)}</div>`;
-            
-        })
+           
+            listCartHTML.appendChild(newItem);
+        });
     }
-    iconCartSpan.innerText = totalQuantity;
-    const subtotalPriceElement = document.querySelector('.subtotalPrice');
-    subtotalPriceElement.textContent = `N${totalPrice.toFixed(2)}`;
-}; 
+    const subtotalContainer = document.querySelector('.subtotalContainer');
+    subtotalContainer.querySelector('.subtotal').textContent = `N${totalPrice.toFixed(2)}`;
 
-    
+
+    const itemCountSpan = document.querySelector('.itemCount');
+    itemCountSpan.textContent = totalQuantity;
+
+    // Call updateSubtotal() to ensure the subtotal is updated
+    updateSubtotal();
+};
+
+  
 
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
@@ -151,6 +182,7 @@ const changeQuantityCart = (product_id, type) => {
     }
     addCartToHTML();
     addCartToMemory();
+    updateSubtotal();
 }
 
 const initApp = () => {
@@ -167,5 +199,9 @@ const initApp = () => {
             addCartToHTML();
         }
     })
+    updateSubtotal();
 }
 initApp();
+
+
+
